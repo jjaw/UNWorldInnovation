@@ -19,6 +19,12 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  */
 module.exports = {
   solidity: "0.8.4",
+  settings: {
+    optimizer: {
+      runs: 200,
+      enabled: true
+    }
+  },
   networks: {
     hardhat: {
       chainId: 1337,

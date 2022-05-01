@@ -14,6 +14,11 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
+  await deployCommentsContract();
+  await deployStacksContract();
+}
+
+async function deployCommentsContract() {
   const CommentsContract = await hre.ethers.getContractFactory("Comments");
   const contract = await CommentsContract.deploy();
 
@@ -25,7 +30,18 @@ async function main() {
   const tx2 = await contract.addComment("my-blog-post", "My second comment");
   await tx2.wait();
 
-  console.log("Contract deployed to:", contract.address);
+  console.log("Comment Contract deployed to:", contract.address);
+}
+
+async function deployStacksContract() {
+  let StacksContract = await hre.ethers.getContractFactory("Stacks");
+  contract = await StacksContract.deploy();
+
+  const tx1 = await contract.addStack("google.com", "This is a comment");
+  await tx1.wait();
+
+  await contract.deployed();
+  console.log("Stack Contract deployed to:", contract.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

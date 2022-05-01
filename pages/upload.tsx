@@ -6,7 +6,7 @@ import { Toaster, toast } from "react-hot-toast";
 import theme from "../theme";
 import { Provider as WagmiProvider } from "wagmi";
 import { providers } from "ethers";
-import Comments from "../components/Comments";
+import Stacks from "../components/stack/Stacks";
 
 
 // Provider that will be used when no wallet is connected (aka no signer)
@@ -35,7 +35,10 @@ const App: NextPage = () => {
     <WagmiProvider autoConnect provider={provider}>
       <ChakraProvider theme={theme}>
         <QueryClientProvider client={queryClient}>
-          Test Upload Page
+          <Box p={8} maxW="600px" minW="320px" m="0 auto">
+            <Stacks/>
+            <Toaster position="bottom-right" />
+          </Box>
         </QueryClientProvider>
       </ChakraProvider>
     </WagmiProvider>

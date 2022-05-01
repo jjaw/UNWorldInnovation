@@ -6,8 +6,7 @@ import { Toaster, toast } from "react-hot-toast";
 import theme from "../theme";
 import { Provider as WagmiProvider } from "wagmi";
 import { providers } from "ethers";
-import Comments from "../components/Comments";
-import NavBar from "../components/NavBar";
+import Comments from "../components/comment/Comments";
 
 
 // Provider that will be used when no wallet is connected (aka no signer)
