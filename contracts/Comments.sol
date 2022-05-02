@@ -8,10 +8,10 @@ contract Comments {
     mapping(string => Comment[]) private commentsByTopic;
 
     struct Comment {
-        uint32 id;
         string topic;
-        address creator_address;
         string message;
+        address creator_address;
+        uint32 id;
         uint256 created_at;
     }
 

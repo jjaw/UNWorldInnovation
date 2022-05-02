@@ -18,10 +18,10 @@ contract Stacks is ERC721URIStorage, Ownable {
     mapping(address => Stack[]) private stacksByUser;
 
     struct Stack {
-        uint32 id;
-        string image;
         address creator_address;
+        string image;
         string comment;
+        uint32 id;
         uint256 created_at;
     }
 
