@@ -1,0 +1,3 @@
+[submodule "ethereum-boilerplate"]
+	path = ethereum-boilerplate
+	url = git@github.com:jjaw/ethereum-boilerplate.git
